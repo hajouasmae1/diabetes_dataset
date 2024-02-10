@@ -4,7 +4,15 @@ import pandas as pd
 import requests
 import os
 import requests
-import lightgbm
+#import lightgbm
+
+# Try installing lightgbm
+try:
+    import lightgbm
+except ImportError:
+    st.write("Installing lightgbm...")
+    !pip install lightgbm
+    import lightgbm
 
 
 # URL of the raw file on GitHub
