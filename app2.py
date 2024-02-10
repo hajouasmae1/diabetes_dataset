@@ -17,11 +17,10 @@ if response.status_code == 200:
     # Open the downloaded file using a context manager
     with open('lgbm_tuned_model.pkl', 'wb') as f:
         f.write(response.content)
-        
-    # Open the downloaded file for reading
-    with open('lgbm_tuned_model.pkl', 'r') as f:
-            # Load the trained model
-            lgbm_model = pickle.load(f)
+
+# Load the trained model
+with open('lgbm_tuned_model.pkl', 'rb') as f:
+    lgbm_model = pickle.load(f)
 
 # Function to make predictions
 def predict_outcome(model, data):
