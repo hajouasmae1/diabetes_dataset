@@ -4,6 +4,7 @@ import pandas as pd
 import requests
 import os
 import requests
+pip install lightgbm
 
 
 # URL of the raw file on GitHub
