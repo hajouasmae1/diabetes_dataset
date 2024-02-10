@@ -24,9 +24,9 @@ if response.status_code == 200:
             lgbm_model = pickle.load(f)
 
 # Function to make predictions
-def predict_outcome(model, data):
-    prediction = model.predict(data)
-    return prediction
+#def predict_outcome(model, data):
+    #prediction = model.predict(data)
+    #return prediction
 
 import streamlit as st
 def main():
@@ -55,7 +55,7 @@ def main():
     })
 
     # Use the trained model to make a prediction
-    prediction = predict_outcome(lgbm_model, user_data)
+    prediction = lgbm_model.predict(user_data)
 
     # Display the prediction
     if prediction[0] == 1:
