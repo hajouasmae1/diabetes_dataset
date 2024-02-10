@@ -5,7 +5,7 @@ import pandas as pd
 
 
 # Load the trained model
-with open('lgbm_tuned_model.pkl', 'rb') as f:
+with open('diabetes_dataset/lgbm_tuned_model.pkl', 'rb') as f:
     lgbm_model = pickle.load(f)
 
 # Function to make predictions
