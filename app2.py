@@ -1,11 +1,28 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import requests
+import os
+import requests
 
 
+# URL of the raw file on GitHub
+file_url = 'https://raw.githubusercontent.com/hajouasmae1/diabetes_dataset/lgbm_tuned_model.pkl'
 
+# Send a GET request to the URL
+response = requests.get(file_url)
+
+# Check if the request was successful (status code 200)
+if response.status_code == 200:
+    # Open the downloaded file using a context manager
+    with open('file.ext', 'wb') as f:
+        f.write(response.content)
+        
+    # Open the downloaded file for reading
+    with open('file.ext', 'r') as f:
+        # Read the contents of the file
+        
 # Load the trained model
-with open('diabetes_dataset/lgbm_tuned_model.pkl', 'rb') as f:
     lgbm_model = pickle.load(f)
 
 # Function to make predictions
