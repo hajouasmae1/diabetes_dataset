@@ -15,18 +15,18 @@ response = requests.get(file_url)
 # Check if the request was successful (status code 200)
 if response.status_code == 200:
     # Open the downloaded file using a context manager
-    with open('file.ext', 'wb') as f:
+    with open('lgbm_tuned_model.pkl', 'wb') as f:
         f.write(response.content)
         
     # Open the downloaded file for reading
-    with open('file.ext', 'r') as f:
+    with open('lgbm_tuned_model.pkl', 'r') as f:
             # Load the trained model
             lgbm_model = pickle.load(f)
 
 # Function to make predictions
-#def predict_outcome(model, data):
-    #prediction = model.predict(data)
-    #return prediction
+def predict_outcome(model, data):
+    prediction = model.predict(data)
+    return prediction
 
 import streamlit as st
 def main():
@@ -54,8 +54,8 @@ def main():
         "Age": [age]
     })
 
-    # Use the trained model to make a prediction
-    prediction = lgbm_model.predict(user_data)
+     # Use the trained model to make a prediction
+    prediction = predict_outcome(lgbm_model, user_data)
 
     # Display the prediction
     if prediction[0] == 1:
