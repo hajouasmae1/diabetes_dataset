@@ -4,7 +4,6 @@ import pandas as pd
 import requests
 import os
 import requests
-from lightgbm import LGBMClassifier
 
 
 # URL of the raw file on GitHub
