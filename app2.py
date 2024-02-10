@@ -20,10 +20,8 @@ if response.status_code == 200:
         
     # Open the downloaded file for reading
     with open('file.ext', 'r') as f:
-        # Read the contents of the file
-        
-# Load the trained model
-    lgbm_model = pickle.load(f)
+            # Load the trained model
+            lgbm_model = pickle.load(f)
 
 # Function to make predictions
 def predict_outcome(model, data):
